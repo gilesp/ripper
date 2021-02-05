@@ -100,11 +100,4 @@ EOF
 
 abcde -c abcde.conf
 
-# abcde \
-#     -c abcde.conf
-#     -a cddb,read,getalbumart,normalizer,encode,tag,replaygain,clean \
-#     -d ${cd_device} \
-#     -N \
-#     -o flac \
-#     -p
-
+eject $cd_device
