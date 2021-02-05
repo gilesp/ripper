@@ -1,0 +1,10 @@
+[Unit]
+Description=Auto DVD ripper
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/ripper.conf
+ExecStart=/home/giles/ripper/rip_dvd.sh -d $DVD_DEVICE -o $MOVIE_DIRECTORY
+
+[Install]
+WantedBy=multi-user.target

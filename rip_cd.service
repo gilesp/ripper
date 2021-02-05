@@ -1,0 +1,10 @@
+[Unit]
+Description=Auto CD ripper
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/ripper.conf
+ExecStart=/home/giles/ripper/rip_cd.sh -d $CD_DEVICE -o $MUSIC_DIRECTORY
+
+[Install]
+WantedBy=multi-user.target
