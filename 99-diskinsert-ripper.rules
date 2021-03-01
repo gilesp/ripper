@@ -1,3 +1,3 @@
 # Move, Copy, or Symlink this file to /etc/udev/rules.d/99-discinsert-ripper.rules
-KERNEL=="sr0", ACTION=="change", ENV{ID_CDROM_MEDIA_CD}=="1", ENV{ID_CDROM_MEDIA_STATE}!="blank", RUN+="/bin/systemctl start rip_cd.service"
-KERNEL=="sr0", ACTION=="change", ENV{ID_CDROM_MEDIA_DVD}=="1", ENV{ID_CDROM_MEDIA_STATE}!="blank", RUN+="/bin/systemctl start rip_dvd.service"
+KERNEL=="s[rg][0-9]*", ACTION=="change", ENV{ID_CDROM_MEDIA_CD}=="1", ENV{ID_CDROM_MEDIA_STATE}!="blank", RUN+="/bin/systemctl start rip_cd@%k.service"
+KERNEL=="s[rg][0-9]*", ACTION=="change", ENV{ID_CDROM_MEDIA_DVD}=="1", ENV{ID_CDROM_MEDIA_STATE}!="blank", RUN+="/bin/systemctl start rip_dvd@%k.service"
